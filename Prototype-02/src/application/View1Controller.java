@@ -20,12 +20,7 @@ public class View1Controller implements Initializable {
 	
 	@FXML
 	protected void nextView(ActionEvent event) {
-		System.out.println("next view!");
-
-		System.out.println(event);
-		
-		System.out.println(btnNavNext);
-		
+		System.out.println("next view! (View2)");
 		
 		Stage stage;
 		Parent root = null;
@@ -37,10 +32,9 @@ public class View1Controller implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		
 	}
 	
 	public void initialize(URL location, ResourceBundle resources) {
