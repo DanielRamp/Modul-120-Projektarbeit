@@ -22,6 +22,11 @@ public class View1Controller implements Initializable {
 	protected void nextView(ActionEvent event) {
 		System.out.println("next view!");
 
+		System.out.println(event);
+		
+		System.out.println(btnNavNext);
+		
+		
 		Stage stage;
 		Parent root = null;
 
@@ -35,12 +40,12 @@ public class View1Controller implements Initializable {
 
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.show();
+		
 	}
 	
 	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("location"+location);
-		System.out.println("resources"+resources);
+		//System.out.println("location"+location);
+		//System.out.println("resources"+resources);
 	}
 	
 }

@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.BorderPane?>
 
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="application.View1Controller">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="application.View1Controller">
    <center>
-      <Button fx:id="btnNavNext" mnemonicParsing="false" onMouseClicked="#nextView" text="btnNavNext" BorderPane.alignment="CENTER">
+      <Button fx:id="btnNavNext" mnemonicParsing="false" onAction="#nextView" text="btnNavNext" BorderPane.alignment="CENTER">
          <styleClass>
             <String fx:value="btnNav" />
             <String fx:value="btnNavNext" />
