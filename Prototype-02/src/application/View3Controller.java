@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class View2Controller implements Initializable {
+public class View3Controller implements Initializable {
 	
 	@FXML
 	private Button btnNavNext;
