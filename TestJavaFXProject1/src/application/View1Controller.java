@@ -15,13 +15,35 @@ public class View1Controller implements Initializable {
 	@FXML
 	private Button btnNext;
 	
-	private boolean pressedCtrl;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@FXML
 	protected void btnNextAction() {
 		System.out.println("juhuii");
 		btnNext.setText("Teesstt");
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	private boolean pressedCtrl;
+	
 	
 	@FXML
 	protected void keyPressed(KeyEvent ke) {
