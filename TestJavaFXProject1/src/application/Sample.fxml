@@ -3,8 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="application.View1Controller">
+<BorderPane onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.View1Controller">
    <center>
       <Button id="btnNext" fx:id="btnNext" mnemonicParsing="false" onAction="#btnNextAction" text="btnNext" BorderPane.alignment="CENTER" />
    </center>
