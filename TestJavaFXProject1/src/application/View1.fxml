@@ -2,6 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
@@ -14,10 +16,31 @@
                   <Font size="74.0" />
                </font>
                <BorderPane.margin>
-                  <Insets top="50.0" />
+                  <Insets top="20.0" />
                </BorderPane.margin>
             </Label>
          </top>
+         <center>
+            <Label id="lblCategoryChoose" fx:id="lblCategoryChoose" accessibleText="Kategorien auswählen" text="Kategorien auswählen" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Italic" size="39.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets top="15.0" />
+               </BorderPane.margin>
+            </Label>
+         </center>
       </BorderPane>
    </top>
+   <center>
+      <TableView id="tblCategories" fx:id="tblCategories" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="100.0" right="100.0" top="5.0" />
+         </BorderPane.margin>
+      </TableView>
+   </center>
 </BorderPane>
