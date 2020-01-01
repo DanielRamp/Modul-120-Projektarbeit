@@ -19,16 +19,8 @@ public class LukasTest3 {
 					System.out.println("dieser Name: " + personen.get(0).name);
 			// Alle Personen
 				for (LukasTest2_Person person : personen) {
-					// Akzeptiert Ja/Nein anstatt true/false
-						String acceptedTemp;
-						if (person.accepted) {
-							acceptedTemp = "Ja";
-						} else {
-							acceptedTemp = "Nein";
-						}
-					
 					System.out.println("ID: "+person.id+"   Name: "+person.name+
-							"   Alter: "+person.age+"   Notiz: "+person.note+"   Akzeptiert: "+acceptedTemp);
+							"   Alter: "+person.age+"   Notiz: "+person.note+"   Akzeptiert: "+person.getAccepted());
 				}
 		
 	}

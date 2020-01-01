@@ -1,4 +1,8 @@
-// Code by Daniel Ramp
+
+/**
+ * @author Daniel Ramp
+ */
+
 public class LukasTest2_Person {
 
 	public Integer id;
@@ -22,5 +26,14 @@ public class LukasTest2_Person {
 		this.accepted = accepted;
 	}
 	
+	// Optional, Abfrage vereinfachen
+	public String getAccepted() {
+		if (accepted) {
+			return "Ja";
+		} else {
+			return "Nein";
+		}
+	}
+	
 }
-//Code by Daniel Ramp
+//Code written by Daniel Ramp - c 2020
