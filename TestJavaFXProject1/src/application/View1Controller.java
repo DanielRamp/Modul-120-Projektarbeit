@@ -33,6 +33,8 @@ public class View1Controller implements Initializable {
 	protected void btnNextAction() {
 		System.out.println("juhuii");
 		btnNext.setText("Teesstt");
+		//throw new ArithmeticException("Huiihuihuiii");
+		//throw new NullPointerException();
 	}
 	
 	
