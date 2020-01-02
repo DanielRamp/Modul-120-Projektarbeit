@@ -1,22 +1,27 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.control.TableView;
+import javafx.stage.Stage;
 
 public class View1Controller implements Initializable {
 
-	@FXML
-	private Button btnNext;
+	@FXML private Button btnNext;
+	@FXML private Label lblWelcome;
 	
 	@FXML
 	private ListView<String> lstCategories;
@@ -38,12 +43,7 @@ public class View1Controller implements Initializable {
 	
 	@FXML
 	protected void btnNextAction() {
-		System.out.println("juhuii");
-		btnNext.setText("Teesstt");
-		//throw new ArithmeticException("Huiihuihuiii");
-		//throw new NullPointerException();
-		lstCategories.getItems().add("Test");
-		
+		/*
 		Data d = Data.getInstance();
 		
 		ArrayList<Category> categories = d.getCategories();
@@ -55,9 +55,24 @@ public class View1Controller implements Initializable {
 		for (Category category : categories) {
 			lstCategories.getItems().add(category.isSelected().toString());
 		}
+		*/
 		
+		System.out.println("View2 sollte hetzt");
+		
+		Stage stage;
+		Parent root = null;
+		
+		stage = (Stage) btnNext.getScene().getWindow();
+		
+		try {
+			root = FXMLLoader.load(getClass().getResource("View1old.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
 	}
-	
 	
 	
 	
