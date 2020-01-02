@@ -20,8 +20,7 @@ public class View1Controller implements Initializable {
 	@FXML
 	private ListView<String> lstCategories;
 	
-	@FXML
-	private TableView<String> tblCategories;
+
 	
 	
 	
@@ -75,7 +74,6 @@ public class View1Controller implements Initializable {
 			}
 		} else {
 			System.out.println("Key " + kc + " pressed");
-			lstCategories.setDisable(true);
 		}
 	}
 	
