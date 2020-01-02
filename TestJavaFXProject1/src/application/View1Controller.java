@@ -7,14 +7,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.control.TableView;
 
 public class View1Controller implements Initializable {
 
 	@FXML
 	private Button btnNext;
 	
+	@FXML
+	private ListView<String> lstCategories;
+	
+	@FXML
+	private TableView<String> tblCategories;
 	
 	
 	
@@ -68,6 +75,7 @@ public class View1Controller implements Initializable {
 			}
 		} else {
 			System.out.println("Key " + kc + " pressed");
+			lstCategories.setDisable(true);
 		}
 	}
 	
