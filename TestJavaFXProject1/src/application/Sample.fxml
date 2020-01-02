@@ -11,9 +11,6 @@
    </center>
    <bottom>
       <ListView id="lstCategories" fx:id="lstCategories" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
-      	<HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: red;" BorderPane.alignment="CENTER" />
-      	<HBox style="-fx-background-color: yellow" BorderPane.alignment="CENTER" />
-      	<HBox style="-fx-background-color: blue;" BorderPane.alignment="CENTER" />
       </ListView>
    </bottom>
 </BorderPane>

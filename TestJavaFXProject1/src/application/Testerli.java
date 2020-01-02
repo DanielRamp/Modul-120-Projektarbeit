@@ -11,6 +11,8 @@ public class Testerli {
 	 */
 	public static void main(String[] args) {
 		
+		/*
+		
 		Signeli si = new Signeli();
 		
 		si.setText1("blabla");
@@ -19,6 +21,8 @@ public class Testerli {
 		Signeli si2 = new Signeli();
 		
 		System.out.println(si2.getInstance().getText1());
+		
+		*/
 		
 		Signeli si3 = Signeli.getInstance();
 		

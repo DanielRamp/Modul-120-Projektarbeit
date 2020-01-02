@@ -1,6 +1,7 @@
 package application;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -41,6 +42,20 @@ public class View1Controller implements Initializable {
 		btnNext.setText("Teesstt");
 		//throw new ArithmeticException("Huiihuihuiii");
 		//throw new NullPointerException();
+		lstCategories.getItems().add("Test");
+		
+		Data d = Data.getInstance();
+		
+		ArrayList<Category> categories = d.getCategories();
+		
+		categories.add(new Category("icon1", "text1", false));
+		categories.add(new Category("icon2", "text2", true));
+		categories.add(new Category("icon3", "text3", false));
+		
+		for (Category category : categories) {
+			lstCategories.getItems().add(category.isSelected().toString());
+		}
+		
 	}
 	
 	
