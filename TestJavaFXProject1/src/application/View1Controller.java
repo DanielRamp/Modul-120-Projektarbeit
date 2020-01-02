@@ -65,7 +65,7 @@ public class View1Controller implements Initializable {
 		stage = (Stage) btnNext.getScene().getWindow();
 		
 		try {
-			root = FXMLLoader.load(getClass().getResource("View1old.fxml"));
+			root = FXMLLoader.load(getClass().getResource("View2.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
