@@ -22,3 +22,7 @@
 .round-button {
 	-fx-background-radius: 100;
 }
+
+.smallerPadding{
+	-fx-padding: 10;
+}
