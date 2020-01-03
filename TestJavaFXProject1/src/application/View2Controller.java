@@ -28,7 +28,7 @@ public class View2Controller implements Initializable {
 	@FXML Button btnPrev;
 	@FXML Button btnRefresh;
 	@FXML Button btnClearPosts;
-	@FXML Button btnAddPost;
+	@FXML Button btnNewPost;
 	@FXML ListView<Post> lstPosts;
 	
 	private ObservableList<Post> postObservableList;
@@ -87,13 +87,14 @@ public class View2Controller implements Initializable {
 
 
 
-	@FXML public void btnClearPosts() {
+	@FXML public void btnClearPostsAction() {
 		lstPosts.getItems().clear();
 	}
 
 
 
 
-	@FXML public void btnAddPostAction() {}
+	@FXML public void btnNewPostAction() {
+	}
 
 }

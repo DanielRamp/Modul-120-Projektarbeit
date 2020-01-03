@@ -52,7 +52,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </BorderPane.margin>
          <left>
-            <Button id="btnClearPosts" fx:id="btnClearPosts" accessibleText="Posts löschen Button" mnemonicParsing="false" onAction="#btnClearPosts" styleClass="round-button" BorderPane.alignment="CENTER">
+            <Button id="btnClearPosts" fx:id="btnClearPosts" accessibleText="Posts löschen Button" mnemonicParsing="false" onAction="#btnClearPostsAction" styleClass="round-button" BorderPane.alignment="CENTER">
                <graphic>
                   <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -63,7 +63,7 @@
             </Button>
          </left>
          <right>
-            <Button id="imgAddPost" fx:id="btnAddPost" accessibleText="Post hinzufügen Button" mnemonicParsing="false" onAction="#btnAddPostAction" styleClass="round-button" BorderPane.alignment="CENTER">
+            <Button id="btnNewPost" fx:id="btnNewPost" accessibleText="Post hinzufügen Button" mnemonicParsing="false" onAction="#btnNewPostAction" styleClass="round-button" BorderPane.alignment="CENTER">
                <graphic>
                   <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
