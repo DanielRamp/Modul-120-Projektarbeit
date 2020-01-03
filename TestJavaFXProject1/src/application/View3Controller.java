@@ -48,7 +48,9 @@ public class View3Controller implements Initializable {
 		new Outputter("blabla");
 	}
 
-	@FXML public void btnSendPostAction() {}
+	@FXML public void btnSendPostAction() {
+		//txfTitel.getText();
+	}
 
 
 
