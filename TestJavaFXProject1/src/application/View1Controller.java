@@ -17,11 +17,14 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import javafx.scene.image.ImageView;
 
 public class View1Controller implements Initializable {
 
 	@FXML private Button btnNext;
 	@FXML private Label lblWelcome;
+	@FXML Label lblCategoryChoose;
+	@FXML ImageView imgNext;
 	
 	@FXML
 	private ListView<String> lstCategories;
@@ -75,7 +78,10 @@ public class View1Controller implements Initializable {
 	}
 	
 	
-	
+	public void hideWelcome() {
+		lblWelcome.setOpacity(0);
+		lblCategoryChoose.setText("Kategorien ändern");
+	}
 	
 	
 	
