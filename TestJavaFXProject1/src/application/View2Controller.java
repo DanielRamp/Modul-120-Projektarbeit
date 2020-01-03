@@ -95,6 +95,26 @@ public class View2Controller implements Initializable {
 
 
 	@FXML public void btnNewPostAction() {
+		Stage stage;
+		Parent root = null;
+		
+		stage = (Stage) btnNewPost.getScene().getWindow();
+		
+		try {
+			root = FXMLLoader.load(getClass().getResource("View3.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		/*
+		stage.setMinHeight(100);
+		stage.setMinHeight(500);
+		
+		stage.setMinHeight(400);
+		stage.setMinHeight(600);
+		*/
 	}
 
 }
