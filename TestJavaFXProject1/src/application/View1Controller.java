@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
@@ -60,8 +61,6 @@ public class View1Controller implements Initializable {
 		}
 		*/
 		
-		System.out.println("View2 sollte hetzt");
-		
 		Stage stage;
 		Parent root = null;
 		
@@ -79,7 +78,11 @@ public class View1Controller implements Initializable {
 	
 	
 	public void hideWelcome() {
-		lblWelcome.setOpacity(0);
+		//lblWelcome.setOpacity(0);
+		//lblWelcome.getParent().getParent().getParent().getParent().getParent().getChildren().remove(lblWelcome);
+		BorderPane bp = (BorderPane) lblWelcome.getParent();
+		bp.setTop(null);
+		//result.getParent().getChildren().remove(result);
 		lblCategoryChoose.setText("Kategorien ändern");
 	}
 	
