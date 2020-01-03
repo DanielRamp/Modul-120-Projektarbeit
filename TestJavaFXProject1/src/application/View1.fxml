@@ -14,7 +14,7 @@
 
 <BorderPane prefHeight="900.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.View1Controller">
    <top>
-      <BorderPane prefHeight="200.0" BorderPane.alignment="CENTER">
+      <BorderPane BorderPane.alignment="CENTER">
          <top>
             <Label id="lblWelcome" fx:id="lblWelcome" accessibleText="Willkommen" text="Willkommen" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <font>
