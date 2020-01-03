@@ -2,21 +2,18 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="900.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.View1Controller">
+<BorderPane prefHeight="900.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.View2Controller">
    <top>
       <BorderPane prefHeight="100.0" BorderPane.alignment="CENTER">
          <center>
-            <Label id="lblCategoryChoose" fx:id="lblCategoryChoose" accessibleText="Kategorien auswählen" text="Feed" textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <Label id="lblFeed" fx:id="lblFeed" accessibleText="Feed" text="Feed" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <font>
                   <Font size="62.0" />
                </font>
@@ -26,9 +23,9 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </BorderPane.margin>
          <left>
-            <Button id="btnNext" fx:id="btnNext1" accessibleText="Weiter" mnemonicParsing="false" onAction="#btnNextAction" styleClass="round-button" BorderPane.alignment="CENTER">
+            <Button id="btnPrev" fx:id="btnPrev" accessibleText="Zurück Button" mnemonicParsing="false" onAction="#btnPrevAction" styleClass="round-button" BorderPane.alignment="CENTER">
                <graphic>
-                  <ImageView id="imgNext" fx:id="imgNext1" fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/baseline_arrow_back_black_48dp.png" />
                      </image>
@@ -37,9 +34,9 @@
             </Button>
          </left>
          <right>
-            <Button id="btnNext" fx:id="btnNext2" accessibleText="Weiter" mnemonicParsing="false" onAction="#btnNextAction" styleClass="round-button" BorderPane.alignment="CENTER">
+            <Button id="btnRefresh" fx:id="btnRefresh" accessibleText="Refresh Button" mnemonicParsing="false" onAction="#btnRefreshAction" styleClass="round-button" BorderPane.alignment="CENTER">
                <graphic>
-                  <ImageView id="imgNext" fx:id="imgNext2" fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/baseline_refresh_black_48dp.png" />
                      </image>
@@ -49,99 +46,26 @@
          </right>
       </BorderPane>
    </top>
-   <center>
-      <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
-          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="80.0" prefWidth="500.0" />
-            <ColumnConstraints halignment="CENTER" minWidth="150.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints vgrow="SOMETIMES" />
-          <RowConstraints vgrow="SOMETIMES" />
-          <RowConstraints vgrow="SOMETIMES" />
-          <RowConstraints vgrow="SOMETIMES" />
-            <RowConstraints vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <CheckBox mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" />
-            <CheckBox layoutX="776.0" layoutY="16.0" mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <CheckBox layoutX="101.0" layoutY="16.0" mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <CheckBox layoutX="776.0" layoutY="46.0" mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <CheckBox layoutX="776.0" layoutY="251.0" mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/baseline_notes_black_48dp.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="100.0" layoutX="53.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@img/baseline_local_hospital_black_48dp.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="100.0" layoutX="53.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@img/baseline_language_black_48dp.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="100.0" layoutX="53.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@img/baseline_healing_black_48dp.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@img/baseline_computer_black_48dp.png" />
-               </image>
-            </ImageView>
-            <Label text="Allgemein" GridPane.columnIndex="1">
-               <font>
-                  <Font size="51.0" />
-               </font>
-            </Label>
-            <Label text="Inland" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font size="51.0" />
-               </font>
-            </Label>
-            <Label text="Ausland" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <font>
-                  <Font size="51.0" />
-               </font>
-            </Label>
-            <Label text="Medizin" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <font>
-                  <Font size="51.0" />
-               </font>
-            </Label>
-            <Label text="Technologie" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <font>
-                  <Font size="51.0" />
-               </font>
-            </Label>
-         </children>
-      </GridPane>
-   </center>
    <bottom>
       <BorderPane prefHeight="100.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </BorderPane.margin>
          <left>
-            <Button id="btnNext" fx:id="btnNext3" accessibleText="Weiter" mnemonicParsing="false" onAction="#btnNextAction" opacity="0.0" styleClass="round-button" BorderPane.alignment="CENTER">
+            <Button id="btnClearPosts" fx:id="btnClearPosts" accessibleText="Posts löschen Button" mnemonicParsing="false" onAction="#btnClearPosts" styleClass="round-button" BorderPane.alignment="CENTER">
                <graphic>
-                  <ImageView id="imgNext" fx:id="imgNext3" fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/baseline_arrow_forward_black_48dp.png" />
+                        <Image url="@img/baseline_clear_all_black_48dp.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
          </left>
          <right>
-            <Button id="btnNext" fx:id="btnNext" accessibleText="Weiter" mnemonicParsing="false" onAction="#btnNextAction" styleClass="round-button" BorderPane.alignment="CENTER">
+            <Button id="imgAddPost" fx:id="btnAddPost" accessibleText="Post hinzufügen Button" mnemonicParsing="false" onAction="#btnAddPostAction" styleClass="round-button" BorderPane.alignment="CENTER">
                <graphic>
-                  <ImageView id="imgNext" fx:id="imgNext" fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/baseline_add_black_48dp.png" />
                      </image>
@@ -151,4 +75,11 @@
          </right>
       </BorderPane>
    </bottom>
+   <center>
+      <ListView id="lstPosts" fx:id="lstPosts" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="20.0" right="20.0" />
+         </BorderPane.margin>
+      </ListView>
+   </center>
 </BorderPane>
