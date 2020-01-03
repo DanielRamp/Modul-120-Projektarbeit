@@ -18,6 +18,8 @@ public class View1App extends Application {
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setScene(scene);
 			stage.show();
+			stage.setMinHeight(900);
+			stage.setMinWidth(600);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
