@@ -2,7 +2,6 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -17,6 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
@@ -74,16 +74,34 @@ public class View1Controller implements Initializable {
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
+		/*
+		stage.setMinHeight(100);
+		stage.setMinHeight(500);
+		*/
+		stage.setMinHeight(400);
+		stage.setMinHeight(600);
 	}
 	
 	
 	public void hideWelcome() {
-		//lblWelcome.setOpacity(0);
-		//lblWelcome.getParent().getParent().getParent().getParent().getParent().getChildren().remove(lblWelcome);
 		BorderPane bp = (BorderPane) lblWelcome.getParent();
 		bp.setTop(null);
-		//result.getParent().getChildren().remove(result);
 		lblCategoryChoose.setText("Kategorien ändern");
+		System.out.println(lblCategoryChoose.getFont());
+		System.out.println(new Font("System Italic", 39));
+		
+		/*
+		DoubleProperty fontSize = new SimpleDoubleProperty(10);
+		
+		lblCategoryChoose.styleProperty().bind(Bindings.concat("-fx-font-size: ",
+				fontSize.asString(), ";"));
+		fontSize.bind(lblCategoryChoose.getScene().widthProperty().add(lblCategoryChoose.getScene().heightProperty()).divide(100));
+		*/
+		
+		//System.out.println(lblCategoryChoose.getScene().widthProperty().getValue());
+		
+		//lblCategoryChoose.fontProperty().bind(lblCategoryChoose.getScene().widthProperty().add(lblCategoryChoose.getScene().heightProperty()).divide(100));
+		//lblCategoryChoose.setFont(new Font("System Italic", 39));
 	}
 	
 	
