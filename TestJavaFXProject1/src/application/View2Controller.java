@@ -54,8 +54,15 @@ public class View2Controller implements Initializable {
 
 	@FXML public void btnPrevAction() {
 		
+		Helper helper = Helper.getInstance();
+		FXMLLoader load = helper.changeViewLoader(btnPrev, "View1.fxml");
+		
+		View1Controller view1Controller = load.getController();
+		
+		view1Controller.hideWelcome();
+		
+		/*
 		Stage stage = (Stage) btnPrev.getScene().getWindow();
-		FXMLLoader load;
 		
 		try {
 			//root = FXMLLoader.load(getClass().getResource("View1.fxml"));
@@ -74,6 +81,7 @@ public class View2Controller implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		*/
 		
 	}
 
