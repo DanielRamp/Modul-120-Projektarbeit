@@ -58,7 +58,6 @@ public class View2Controller implements Initializable {
 				if (isSelected) {
 					listItems.add("Kategorie(n): "+categoriesStringBuilder.toString()+"\nTitel: "+post.getTitle()+"\nInhalt: "+post.getContent()+"");
 				}
-				//listItems.add("Kategorie(n): "+categoriesStringBuilder.toString()+"Titel: "+post.getTitle()+"\nInhalt: "+post.getContent()+"");
 				
 			}
 		}
