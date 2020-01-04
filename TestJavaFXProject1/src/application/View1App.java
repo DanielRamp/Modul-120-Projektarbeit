@@ -10,9 +10,11 @@ public class View1App extends Application {
 	public void start(Stage stage) {
 		Helper helper = Helper.getInstance();
 		
-		stage = helper.changeView(stage, "View1.fxml");
+		helper.stage = stage;
 		
-		stage.show();
+		helper.firstView(stage, "View1.fxml");
+		
+		helper.stage.show();
 	}
 	
 	public static void main(String[] args) {
