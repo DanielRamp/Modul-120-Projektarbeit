@@ -31,22 +31,14 @@ public class View1Controller implements Initializable {
 	private Data data = Data.getInstance();
 	private Helper helper = Helper.getInstance();
 	private boolean pressedCtrl;
-
-	@FXML public void chbCategoryAction(ActionEvent ae) {
-		DummyData.dummyData();
-		/*
-		if (ae.getSource()==chbCategory1) {
-			data.getCategories().get(0).setSelected(false);
-		} else if (ae.getSource()==chbCategory2) {
-			data.getCategories().get(1).setSelected(false);
-		} else if (ae.getSource()==chbCategory3) {
-			data.getCategories().get(2).setSelected(false);
-		} else if (ae.getSource()==chbCategory4) {
-			data.getCategories().get(3).setSelected(false);
-		} else if (ae.getSource()==chbCategory5) {
-			data.getCategories().get(4).setSelected(false);
-		}
-		*/
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		chbCategory1.setSelected(true);
+		chbCategory2.setSelected(true);
+		chbCategory3.setSelected(true);
+		chbCategory4.setSelected(true);
+		chbCategory5.setSelected(true);
 	}
 	
 	@FXML protected void btnNextAction() {
@@ -76,22 +68,6 @@ public class View1Controller implements Initializable {
 		} else {
 			data.getCategories().get(4).setSelected(false);
 		}
-		// TODO: transmit data
-		/*
-		// data?
-		Data d = Data.getInstance();
-		
-		ArrayList<Category> categories = d.getCategories();
-		
-		categories.add(new Category("icon1", "text1", false));
-		categories.add(new Category("icon2", "text2", true));
-		categories.add(new Category("icon3", "text3", false));
-		
-		for (Category category : categories) {
-			lstCategories.getItems().add(category.isSelected().toString());
-		}
-		*/
-		
 		helper.changeView(btnNext, "View2.fxml");
 	}
 	
@@ -143,10 +119,6 @@ public class View1Controller implements Initializable {
 			System.out.println(e);
 			return false;
 		}
-	}
-	
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
 	}
 	
 }
