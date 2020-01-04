@@ -48,7 +48,16 @@ public class View1Controller implements Initializable {
 	
 	@FXML
 	protected void btnNextAction() {
+		Helper helper = Helper.getInstance();
+		
+		Stage stage = helper.changeView(btnNext, "View2.fxml");
+
+		stage.setMinHeight(400);
+		stage.setMinHeight(600);
+		
+		
 		/*
+		// data?
 		Data d = Data.getInstance();
 		
 		ArrayList<Category> categories = d.getCategories();
@@ -61,26 +70,6 @@ public class View1Controller implements Initializable {
 			lstCategories.getItems().add(category.isSelected().toString());
 		}
 		*/
-		
-		Stage stage;
-		Parent root = null;
-		
-		stage = (Stage) btnNext.getScene().getWindow();
-		
-		try {
-			root = FXMLLoader.load(getClass().getResource("View2.fxml"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		/*
-		stage.setMinHeight(100);
-		stage.setMinHeight(500);
-		*/
-		stage.setMinHeight(400);
-		stage.setMinHeight(600);
 	}
 	
 	
