@@ -11,7 +11,7 @@ public class Data {
 	private static Data instance;
 
 	private ArrayList<Category> categories = new ArrayList<Category>();
-	// private ArrayList<String> postList = new ArrayList<String>();
+	private ArrayList<Post> postList = new ArrayList<Post>();
 
 	public static Data getInstance() {
 		if (Data.instance == null) {
@@ -32,6 +32,27 @@ public class Data {
 	 */
 	public void setCategories(ArrayList<Category> categories) {
 		this.categories = categories;
+	}
+
+	/**
+	 * @return the postList
+	 */
+	public ArrayList<Post> getPostList() {
+		return postList;
+	}
+
+	/**
+	 * @param postList the postList to set
+	 */
+	public void setPostList(ArrayList<Post> postList) {
+		this.postList = postList;
+	}
+	
+	/**
+	 * @param postList the postList to set
+	 */
+	public void addPostList(Post post) {
+		this.postList.add(post);
 	}
 
 }
