@@ -52,11 +52,11 @@
             <RowConstraints vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <CheckBox fx:id="chbCategory1" mnemonicParsing="false" onAction="#chbCategoryAction" styleClass="big-check-box" GridPane.columnIndex="2" />
-            <CheckBox fx:id="chbCategory2" layoutX="776.0" layoutY="16.0" mnemonicParsing="false" onAction="#chbCategoryAction" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <CheckBox fx:id="chbCategory3" layoutX="101.0" layoutY="16.0" mnemonicParsing="false" onAction="#chbCategoryAction" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <CheckBox fx:id="chbCategory4" layoutX="776.0" layoutY="46.0" mnemonicParsing="false" onAction="#chbCategoryAction" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <CheckBox fx:id="chbCategory5" layoutX="776.0" layoutY="251.0" mnemonicParsing="false" onAction="#chbCategoryAction" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <CheckBox fx:id="chbCategory1" mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" />
+            <CheckBox fx:id="chbCategory2" layoutX="776.0" layoutY="16.0" mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <CheckBox fx:id="chbCategory3" layoutX="101.0" layoutY="16.0" mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <CheckBox fx:id="chbCategory4" layoutX="776.0" layoutY="46.0" mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <CheckBox fx:id="chbCategory5" layoutX="776.0" layoutY="251.0" mnemonicParsing="false" styleClass="big-check-box" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/baseline_notes_black_48dp.png" />
