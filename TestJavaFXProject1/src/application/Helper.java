@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -22,9 +23,9 @@ public class Helper {
 	private static final int STAGEMINWIDTH = 600;
 	
 	// TODO: NOT not private for NOT testing
-	Stage stage; // Swing: JFrame
-	Scene scene; // Swing: content pane
-	Parent root;
+	Stage stage, dialogStage; // Swing: JFrame
+	Scene scene, dialogScene; // Swing: content pane
+	Parent root, dialogRoot;
 	
 	public static Helper getInstance () {
 	    if (Helper.instance == null) {
@@ -66,9 +67,6 @@ public class Helper {
 	public void changeView(Button btn, String view) {
 		root = null;
 		
-		//stage = (Stage) btn.getScene().getWindow();
-		
-		root = null;
 		try {
 			root = FXMLLoader.load(getClass().getResource(view));
 		} catch (IOException e) {
@@ -141,6 +139,26 @@ public class Helper {
 		
 		Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
 		return load;
+	}
+	
+	public void dialogView(Button btn, String view) {
+		dialogStage = new Stage();
+		
+		dialogRoot = null;
+		try {
+			dialogRoot = FXMLLoader.load(getClass().getResource(view));
+		} catch (IOException e) {
+			Outputter.err(e.getStackTrace().toString());
+		}
+		
+		dialogScene = new Scene(dialogRoot);
+		dialogStage.setScene(dialogScene);
+		
+		dialogStage.initOwner(stage);
+		dialogStage.initModality(Modality.APPLICATION_MODAL);
+		dialogStage.showAndWait();
+		
+		//Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
 	}
 
 }
