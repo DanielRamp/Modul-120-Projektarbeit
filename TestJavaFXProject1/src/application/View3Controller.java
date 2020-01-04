@@ -43,10 +43,7 @@ public class View3Controller implements Initializable {
 		Helper helper = Helper.getInstance();
 		//FXMLLoader load = helper.changeViewLoader(btnPrev, "View2.fxml");
 		//helper.changeView(btnPrev, "View2.fxml");
-		
 		helper.dialogStage.close();
-		
-		helper.changeView(btnPrev, "View1.fxml");
 		
 		/*
 		//bdpOut.getChildren().clear();
