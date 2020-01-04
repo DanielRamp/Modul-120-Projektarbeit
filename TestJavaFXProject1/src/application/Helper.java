@@ -119,6 +119,13 @@ public class Helper {
 	}
 
 	/**
+	 * @return the dialogStage
+	 */
+	public Stage getDialogStage() {
+		return dialogStage;
+	}
+
+	/**
 	 * @param stage the stage to set
 	 */
 	public void setStage(Stage stage) {
