@@ -12,6 +12,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.control.CheckBox;
+import javafx.event.ActionEvent;
 
 public class View1Controller implements Initializable {
 
@@ -20,12 +22,60 @@ public class View1Controller implements Initializable {
 	@FXML private Label lblCategoryChoose;
 	@FXML private ImageView imgNext;
 	@FXML private ListView<String> lstCategories;
+	@FXML private CheckBox chbCategory1;
+	@FXML private CheckBox chbCategory2;
+	@FXML private CheckBox chbCategory3;
+	@FXML private CheckBox chbCategory4;
+	@FXML private CheckBox chbCategory5;
 	
-	Helper helper = Helper.getInstance();
+	private Data data = Data.getInstance();
+	private Helper helper = Helper.getInstance();
 	private boolean pressedCtrl;
-	
+
+	@FXML public void chbCategoryAction(ActionEvent ae) {
+		DummyData.dummyData();
+		/*
+		if (ae.getSource()==chbCategory1) {
+			data.getCategories().get(0).setSelected(false);
+		} else if (ae.getSource()==chbCategory2) {
+			data.getCategories().get(1).setSelected(false);
+		} else if (ae.getSource()==chbCategory3) {
+			data.getCategories().get(2).setSelected(false);
+		} else if (ae.getSource()==chbCategory4) {
+			data.getCategories().get(3).setSelected(false);
+		} else if (ae.getSource()==chbCategory5) {
+			data.getCategories().get(4).setSelected(false);
+		}
+		*/
+	}
 	
 	@FXML protected void btnNextAction() {
+		DummyData.dummyData();
+		if (chbCategory1.isSelected()) {
+			data.getCategories().get(0).setSelected(true);
+		} else {
+			data.getCategories().get(0).setSelected(false);
+		}
+		if (chbCategory2.isSelected()) {
+			data.getCategories().get(1).setSelected(true);
+		} else {
+			data.getCategories().get(1).setSelected(false);
+		}
+		if (chbCategory3.isSelected()) {
+			data.getCategories().get(2).setSelected(true);
+		} else {
+			data.getCategories().get(2).setSelected(false);
+		}
+		if (chbCategory4.isSelected()) {
+			data.getCategories().get(3).setSelected(true);
+		} else {
+			data.getCategories().get(3).setSelected(false);
+		}
+		if (chbCategory5.isSelected()) {
+			data.getCategories().get(4).setSelected(true);
+		} else {
+			data.getCategories().get(4).setSelected(false);
+		}
 		// TODO: transmit data
 		/*
 		// data?
