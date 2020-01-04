@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -79,8 +80,10 @@ public class View2Controller implements Initializable {
 
 
 	@FXML public void btnNewPostAction() {
+		
 		Helper helper = Helper.getInstance();
-		helper.changeView(btnPrev, "View3.fxml");
+		helper.dialogView(btnPrev, "View3.fxml");
+		//helper.changeView(btnPrev, "View3.fxml");
 	}
 
 }
