@@ -83,6 +83,3 @@ local.properties
 .cache-main
 .scala_dependencies
 .worksheet
-TestJavaFXProject1/src/application/changeView.java
-TestJavaFXProject1/src/application/PostListViewCell.java
-TestJavaFXProject1/src/application/ScreenController.java
