@@ -61,7 +61,6 @@ public class Helper {
 		// minimal Dimensions
 		stage.setMinHeight(STAGEMINHEIGHT);
 		stage.setMinHeight(STAGEMINWIDTH);
-		Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
 	}
 	
 	public void changeView(Button btn, String view) {
@@ -74,36 +73,9 @@ public class Helper {
 		}
 		
 		scene.setRoot(root);
-		//scene = new Scene(root);
-		//stage.setScene(scene);
-		Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
-		
-		/*
-		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		stage.setScene(scene);
-		
-		
-		// Title and Icon
-		stage.setTitle("News");
-		try {
-			Image icon = new Image(getClass().getResourceAsStream("img/newspaper.png"));
-			stage.getIcons().add(icon);
-		} catch (Exception e) {
-			Outputter.err(e.getStackTrace().toString());
-		}
-		
-		// minimal Dimensions
-		stage.setMinHeight(400);
-		stage.setMinHeight(600);
-		return stage;
-		*/
 	}
 	
 	public FXMLLoader changeViewLoader(Button btn, String view) {
-		//Stage stage;
-		//Parent root = null;
-		//Scene scene;
 		FXMLLoader load;
 		
 		stage = (Stage) btn.getScene().getWindow();
@@ -117,27 +89,7 @@ public class Helper {
 		}
 		
 		scene.setRoot(root);
-		//scene = new Scene(root);
-		//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		
-		//stage.setScene(scene);
-		
-		/*
-		// Title and Icon
-		stage.setTitle("News");
-		try {
-			Image icon = new Image(getClass().getResourceAsStream("img/newspaper.png"));
-			stage.getIcons().add(icon);
-		} catch (Exception e1) {
-			Outputter.err(e1.getStackTrace().toString());
-		}
-		
-		// minimal Dimensions
-		stage.setMinHeight(400);
-		stage.setMinHeight(600);
-		*/
-		
-		Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
 		return load;
 	}
 	
@@ -157,8 +109,6 @@ public class Helper {
 		dialogStage.initOwner(stage);
 		dialogStage.initModality(Modality.APPLICATION_MODAL);
 		dialogStage.showAndWait();
-		
-		//Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
 	}
 
 }
