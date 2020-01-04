@@ -53,36 +53,12 @@ public class View2Controller implements Initializable {
 
 
 	@FXML public void btnPrevAction() {
-		
 		Helper helper = Helper.getInstance();
 		FXMLLoader load = helper.changeViewLoader(btnPrev, "View1.fxml");
 		
+		// hide lblWelcome on View1 - to recycle View1
 		View1Controller view1Controller = load.getController();
-		
 		view1Controller.hideWelcome();
-		
-		/*
-		Stage stage = (Stage) btnPrev.getScene().getWindow();
-		
-		try {
-			//root = FXMLLoader.load(getClass().getResource("View1.fxml"));
-
-			load = new FXMLLoader(getClass().getResource("View1.fxml"));
-			
-			Parent root = (Parent) load.load();
-			
-			View1Controller view1Controller = load.getController();
-			
-			view1Controller.hideWelcome();
-			
-			stage.setScene(new Scene(root));
-			stage.show();
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		*/
-		
 	}
 
 
@@ -103,26 +79,8 @@ public class View2Controller implements Initializable {
 
 
 	@FXML public void btnNewPostAction() {
-		Stage stage;
-		Parent root = null;
-		
-		stage = (Stage) btnNewPost.getScene().getWindow();
-		
-		try {
-			root = FXMLLoader.load(getClass().getResource("View3.fxml"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		/*
-		stage.setMinHeight(100);
-		stage.setMinHeight(500);
-		
-		stage.setMinHeight(400);
-		stage.setMinHeight(600);
-		*/
+		Helper helper = Helper.getInstance();
+		helper.changeView(btnPrev, "View3.fxml");
 	}
 
 }
