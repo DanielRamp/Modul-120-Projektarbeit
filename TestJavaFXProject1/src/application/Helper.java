@@ -17,6 +17,9 @@ public class Helper {
 	
 	private static Helper instance;
 	
+	Stage stage; // TODO: NOT not private for NOT testing
+	Parent root; // TODO: NOT not private for NOT testing
+	
 	public static Helper getInstance () {
 	    if (Helper.instance == null) {
 	    	Helper.instance = new Helper ();
@@ -35,6 +38,7 @@ public class Helper {
 		}
 		
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		stage.setScene(scene);
 		
 		
@@ -54,8 +58,7 @@ public class Helper {
 	}
 	
 	public Stage changeView(Button btn, String view) {
-		Stage stage;
-		Parent root = null;
+		root = null;
 		
 		stage = (Stage) btn.getScene().getWindow();
 		
@@ -66,6 +69,7 @@ public class Helper {
 		}
 		
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		stage.setScene(scene);
 		
 		
@@ -82,6 +86,44 @@ public class Helper {
 		stage.setMinHeight(400);
 		stage.setMinHeight(600);
 		return stage;
+	}
+	
+	public FXMLLoader changeViewLoader(Button btn, String view) {
+		Stage stage;
+		Parent root = null;
+		Scene scene;
+		FXMLLoader load;
+		
+		stage = (Stage) btn.getScene().getWindow();
+		
+		load = new FXMLLoader(getClass().getResource(view));
+		
+		try {
+			root = (Parent) load.load();
+		} catch (IOException e) {
+			Outputter.err(e.getStackTrace().toString());
+		}
+		
+		scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		
+		stage.setScene(scene);
+		
+		
+		// Title and Icon
+		stage.setTitle("News");
+		try {
+			Image icon = new Image(getClass().getResourceAsStream("img/newspaper.png"));
+			stage.getIcons().add(icon);
+		} catch (Exception e1) {
+			Outputter.err(e1.getStackTrace().toString());
+		}
+		
+		// minimal Dimensions
+		stage.setMinHeight(400);
+		stage.setMinHeight(600);
+		
+		return load;
 	}
 
 }
