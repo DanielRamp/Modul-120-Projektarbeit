@@ -46,6 +46,7 @@ public class View2Controller implements Initializable {
 
 
 	@FXML public void btnRefreshAction() {
+		// TODO: get data and fill list
 		lstPosts.getItems().clear();
 	}
 
@@ -60,7 +61,6 @@ public class View2Controller implements Initializable {
 
 
 	@FXML public void btnNewPostAction() {
-		
 		Helper helper = Helper.getInstance();
 		helper.dialogView(btnPrev, "View3.fxml");
 	}

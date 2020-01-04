@@ -26,21 +26,22 @@ public class View3Controller implements Initializable {
 	@FXML Label lblCategory;
 	@FXML TextField txfTitel;
 	@FXML Button btnSendPost;
+	
+	Helper helper = Helper.getInstance();
 
 	public View3Controller() {
-		
 	}
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
 	}
 
 	@FXML public void btnPrevAction() {
-		Helper helper = Helper.getInstance();
 		helper.getDialogStage().close();
 	}
 
 	@FXML public void btnSendPostAction() {
+		// TODO: transmit data
+		helper.getDialogStage().close();
 	}
 
 }

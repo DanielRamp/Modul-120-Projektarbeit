@@ -1,58 +1,32 @@
 package application;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Font;
-import javafx.stage.Stage;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class View1Controller implements Initializable {
 
 	@FXML private Button btnNext;
 	@FXML private Label lblWelcome;
-	@FXML Label lblCategoryChoose;
-	@FXML ImageView imgNext;
+	@FXML private Label lblCategoryChoose;
+	@FXML private ImageView imgNext;
+	@FXML private ListView<String> lstCategories;
 	
-	@FXML
-	private ListView<String> lstCategories;
-	
-
-	
+	Helper helper = Helper.getInstance();
+	private boolean pressedCtrl;
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	@FXML
-	protected void btnNextAction() {
-		Helper helper = Helper.getInstance();
-		
-		helper.changeView(btnNext, "View2.fxml");
-		
-		
+	@FXML protected void btnNextAction() {
+		// TODO: transmit data
 		/*
 		// data?
 		Data d = Data.getInstance();
@@ -67,36 +41,17 @@ public class View1Controller implements Initializable {
 			lstCategories.getItems().add(category.isSelected().toString());
 		}
 		*/
+		
+		helper.changeView(btnNext, "View2.fxml");
 	}
-	
 	
 	public void hideWelcome() {
 		BorderPane bp = (BorderPane) lblWelcome.getParent();
 		bp.setTop(null);
 		lblCategoryChoose.setText("Kategorien ändern");
-		
-		/*
-		DoubleProperty fontSize = new SimpleDoubleProperty(10);
-		
-		lblCategoryChoose.styleProperty().bind(Bindings.concat("-fx-font-size: ",
-				fontSize.asString(), ";"));
-		fontSize.bind(lblCategoryChoose.getScene().widthProperty().add(lblCategoryChoose.getScene().heightProperty()).divide(100));
-		*/
-		
-		//System.out.println(lblCategoryChoose.getScene().widthProperty().getValue());
-		
-		//lblCategoryChoose.fontProperty().bind(lblCategoryChoose.getScene().widthProperty().add(lblCategoryChoose.getScene().heightProperty()).divide(100));
-		//lblCategoryChoose.setFont(new Font("System Italic", 39));
 	}
 	
-	
-	
-	
-	private boolean pressedCtrl;
-	
-	
-	@FXML
-	protected void keyPressed(KeyEvent ke) {
+	@FXML protected void keyPressed(KeyEvent ke) {
 		KeyCode kc = ke.getCode();
 		if (kc == KeyCode.ESCAPE) {
 			closeApplication(ke);
@@ -119,8 +74,7 @@ public class View1Controller implements Initializable {
 		}
 	}
 	
-	@FXML
-	protected void keyReleased(KeyEvent ke) {
+	@FXML protected void keyReleased(KeyEvent ke) {
 		KeyCode kc = ke.getCode();
 		if (kc == KeyCode.CONTROL) {
 			pressedCtrl = false;
@@ -132,7 +86,8 @@ public class View1Controller implements Initializable {
 	
 	private boolean closeApplication(Object o) {
 		try {
-			((Node)((KeyEvent) o).getSource()).getScene().getWindow().hide(); // Source: https://stackoverflow.com/a/21938672
+			//((Node)((KeyEvent) o).getSource()).getScene().getWindow().hide(); // Source: https://stackoverflow.com/a/21938672
+			helper.getStage().close();
 			return true;
 		} catch (Exception e) {
 			System.out.println(e);
@@ -142,8 +97,6 @@ public class View1Controller implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//System.out.println("location"+location);
-		//System.out.println("resources"+resources);
 	}
 	
 }
