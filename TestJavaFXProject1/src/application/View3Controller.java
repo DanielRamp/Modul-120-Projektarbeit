@@ -39,19 +39,18 @@ public class View3Controller implements Initializable {
 	@FXML private TextArea txaContent;
 	@FXML private Button btnSendPost;
 	
-	private Data data= Data.getInstance();
+	private Data data = Data.getInstance();
 	private Helper helper = Helper.getInstance();
-
+	
+	
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		mnbCategories.getItems().clear();
-		int i = 0;
 		for (Category category : data.getCategories()) {
-			CheckBox checkbox = new CheckBox(i+". "+category.getName());
-			CustomMenuItem customMenuItem = new CustomMenuItem(checkbox);  
+			CheckBox checkBox = new CheckBox(category.getName());
+			Outputter.out(""+data.getCategories().indexOf(category));
+			CustomMenuItem customMenuItem = new CustomMenuItem(checkBox);  
 			mnbCategories.getItems().add(customMenuItem);
-			i++;
 		}
-		mnbCategories.setVisible(true);
 	}
 
 	@FXML public void btnPrevAction() {
@@ -59,14 +58,20 @@ public class View3Controller implements Initializable {
 	}
 
 	@FXML public void btnSendPostAction() {
+		
 		// creating ArrayList with Categories of Post 1
 		ArrayList<Category> categoriesTemp = new ArrayList<Category>();
+		/*
+		for (int i = 0; i < mnbCategories.getItems().size(); i++) {
+			mnbCategories.getItems().get(i)
+		}
+		*/
 		categoriesTemp.add(data.getCategories().get(0));
 		categoriesTemp.add(data.getCategories().get(2));
 		
 		Post post = new Post("asd", txfTitel.getText(), categoriesTemp, txaContent.getText());
 		data.getPostList().add(post);
-		// TODO: transmit data
+		
 		helper.getDialogStage().close();
 	}
 
