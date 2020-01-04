@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="application.View1Controller">
+   <center>
+      <Button fx:id="btnNavNext" mnemonicParsing="false" onAction="#nextView" text="btnNavNext" BorderPane.alignment="CENTER">
+         <styleClass>
+            <String fx:value="btnNav" />
+            <String fx:value="btnNavNext" />
+         </styleClass>
+      </Button>
+   </center>
+</BorderPane>
