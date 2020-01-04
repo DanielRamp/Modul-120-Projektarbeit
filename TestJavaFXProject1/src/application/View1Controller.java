@@ -74,8 +74,6 @@ public class View1Controller implements Initializable {
 		BorderPane bp = (BorderPane) lblWelcome.getParent();
 		bp.setTop(null);
 		lblCategoryChoose.setText("Kategorien ändern");
-		System.out.println(lblCategoryChoose.getFont());
-		System.out.println(new Font("System Italic", 39));
 		
 		/*
 		DoubleProperty fontSize = new SimpleDoubleProperty(10);
