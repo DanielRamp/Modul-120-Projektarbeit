@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,7 +19,7 @@
    <top>
       <BorderPane id="bdpHeader" fx:id="bdpHeader" prefHeight="100.0" BorderPane.alignment="CENTER">
          <center>
-            <Label id="lblFeed" fx:id="lblFeed" accessibleText="Feed" text="Neuer Post" textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <Label id="lblPost" fx:id="lblPost" accessibleText="Feed" text="Neuer Post" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <font>
                   <Font size="62.0" />
                </font>
@@ -88,12 +89,12 @@
                         <Insets />
                      </GridPane.margin>
                   </TextField>
-                  <Label id="lblTitel" fx:id="lblTitel1" accessibleText="Titel" layoutX="10.0" layoutY="89.0" text="Kategorie(n)" GridPane.rowIndex="1">
+                  <Label id="lblCategories" fx:id="lblCategories" accessibleText="Titel" layoutX="10.0" layoutY="89.0" text="Kategorie(n)" GridPane.rowIndex="1">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <MenuButton id="mnbCategoryChoose" fx:id="mnbCategoryChoose" accessibleText="Kategorien auswählen" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Kategorie(n) auswählen" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <MenuButton id="mnbCategories" fx:id="mnbCategories" accessibleText="Kategorien auswählen" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Kategorie(n) auswählen" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <items>
                       <MenuItem id="mnbCategoryChooseItem1" fx:id="mnbCategoryChooseItem1" mnemonicParsing="false" text="Auswahl Platzhalter 1" />
                         <MenuItem id="mnbCategoryChooseItem2" fx:id="mnbCategoryChooseItem2" mnemonicParsing="false" text="Auswahl Platzhalter 2" />
@@ -105,6 +106,13 @@
                </children>
             </GridPane>
          </top>
+         <center>
+            <TextArea id="txaContent" fx:id="txaContent" accessibleText="Textfeld Postinhalt" promptText="Post Inhalt" wrapText="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextArea>
+         </center>
       </BorderPane>
    </center>
 </BorderPane>
