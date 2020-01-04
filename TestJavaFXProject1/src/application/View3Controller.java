@@ -41,7 +41,8 @@ public class View3Controller implements Initializable {
 	@FXML public void btnPrevAction() {
 		
 		Helper helper = Helper.getInstance();
-		FXMLLoader load = helper.changeViewLoader(btnPrev, "View2.fxml");
+		//FXMLLoader load = helper.changeViewLoader(btnPrev, "View2.fxml");
+		helper.changeView(btnPrev, "View2.fxml");
 		
 		/*
 		//bdpOut.getChildren().clear();
