@@ -17,57 +17,69 @@ public class Helper {
 	
 	private static Helper instance;
 	
-	Stage stage; // TODO: NOT not private for NOT testing
-	Parent root; // TODO: NOT not private for NOT testing
+	// CONSTANTS
+	private static final int STAGEMINHEIGHT = 400;
+	private static final int STAGEMINWIDTH = 600;
+	
+	// TODO: NOT not private for NOT testing
+	Stage stage; // Swing: JFrame
+	Scene scene; // Swing: content pane
+	Parent root;
 	
 	public static Helper getInstance () {
 	    if (Helper.instance == null) {
 	    	Helper.instance = new Helper ();
 	    }
 	    return Helper.instance;
-	  }
-	
-	
-	public Stage changeView(Stage stage, String view) {
-		Parent root = null;
-		
-		try {
-			root = FXMLLoader.load(getClass().getResource(view));
-		} catch (IOException e) {
-			Outputter.err(e.getStackTrace().toString());
-		}
-		
-		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		stage.setScene(scene);
-		
-		
-		// Title and Icon
-		stage.setTitle("News");
-		try {
-			Image icon = new Image(getClass().getResourceAsStream("img/newspaper.png"));
-			stage.getIcons().add(icon);
-		} catch (Exception e) {
-			Outputter.err(e.getStackTrace().toString());
-		}
-		
-		// minimal Dimensions
-		stage.setMinHeight(400);
-		stage.setMinHeight(600);
-		return stage;
 	}
 	
-	public Stage changeView(Button btn, String view) {
+	
+	public void firstView(Stage stage, String view) {
+		
 		root = null;
-		
-		stage = (Stage) btn.getScene().getWindow();
-		
 		try {
 			root = FXMLLoader.load(getClass().getResource(view));
 		} catch (IOException e) {
 			Outputter.err(e.getStackTrace().toString());
 		}
 		
+		scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		stage.setScene(scene);
+		
+		
+		// Title and Icon
+		stage.setTitle("News");
+		try {
+			Image icon = new Image(getClass().getResourceAsStream("img/newspaper.png"));
+			stage.getIcons().add(icon);
+		} catch (Exception e) {
+			Outputter.err(e.getStackTrace().toString());
+		}
+		
+		// minimal Dimensions
+		stage.setMinHeight(STAGEMINHEIGHT);
+		stage.setMinHeight(STAGEMINWIDTH);
+		Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
+	}
+	
+	public void changeView(Button btn, String view) {
+		root = null;
+		
+		//stage = (Stage) btn.getScene().getWindow();
+		
+		root = null;
+		try {
+			root = FXMLLoader.load(getClass().getResource(view));
+		} catch (IOException e) {
+			Outputter.err(e.getStackTrace().toString());
+		}
+		
+		scene = new Scene(root);
+		stage.setScene(scene);
+		Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
+		
+		/*
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		stage.setScene(scene);
@@ -86,6 +98,7 @@ public class Helper {
 		stage.setMinHeight(400);
 		stage.setMinHeight(600);
 		return stage;
+		*/
 	}
 	
 	public FXMLLoader changeViewLoader(Button btn, String view) {
@@ -123,6 +136,7 @@ public class Helper {
 		stage.setMinHeight(400);
 		stage.setMinHeight(600);
 		
+		Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
 		return load;
 	}
 
