@@ -39,6 +39,11 @@ public class View3Controller implements Initializable {
 	}
 
 	@FXML public void btnPrevAction() {
+		
+		Helper helper = Helper.getInstance();
+		FXMLLoader load = helper.changeViewLoader(btnPrev, "View2.fxml");
+		
+		/*
 		//bdpOut.getChildren().clear();
 		try {
 			bdpOut.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("View2.fxml")));
@@ -46,6 +51,7 @@ public class View3Controller implements Initializable {
 			new Outputter(e.getStackTrace().toString());
 		}
 		new Outputter("blabla");
+		*/
 	}
 
 	@FXML public void btnSendPostAction() {
