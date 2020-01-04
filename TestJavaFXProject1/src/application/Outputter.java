@@ -16,7 +16,7 @@ public class Outputter {
 		CONSOLE,
 		GUI
 	}
-	private static Boolean debuggingEnabled = true;
+	private static Boolean debuggingEnabled = false;
 	
 	static Date date;
 	static SimpleDateFormat dateFormat;
