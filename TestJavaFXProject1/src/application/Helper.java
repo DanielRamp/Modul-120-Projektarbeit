@@ -75,8 +75,9 @@ public class Helper {
 			Outputter.err(e.getStackTrace().toString());
 		}
 		
-		scene = new Scene(root);
-		stage.setScene(scene);
+		scene.setRoot(root);
+		//scene = new Scene(root);
+		//stage.setScene(scene);
 		Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
 		
 		/*
@@ -102,9 +103,9 @@ public class Helper {
 	}
 	
 	public FXMLLoader changeViewLoader(Button btn, String view) {
-		Stage stage;
-		Parent root = null;
-		Scene scene;
+		//Stage stage;
+		//Parent root = null;
+		//Scene scene;
 		FXMLLoader load;
 		
 		stage = (Stage) btn.getScene().getWindow();
@@ -117,12 +118,13 @@ public class Helper {
 			Outputter.err(e.getStackTrace().toString());
 		}
 		
-		scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		scene.setRoot(root);
+		//scene = new Scene(root);
+		//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		
-		stage.setScene(scene);
+		//stage.setScene(scene);
 		
-		
+		/*
 		// Title and Icon
 		stage.setTitle("News");
 		try {
@@ -135,6 +137,7 @@ public class Helper {
 		// minimal Dimensions
 		stage.setMinHeight(400);
 		stage.setMinHeight(600);
+		*/
 		
 		Outputter.out("Style amount of this scene: "+stage.getScene().getStylesheets().size());
 		return load;
