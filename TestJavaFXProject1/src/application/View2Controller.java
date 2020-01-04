@@ -26,21 +26,47 @@ public class View2Controller implements Initializable {
 	@FXML Button btnNewPost;
 	@FXML ListView<String> lstPosts;
 	
+	Data data = Data.getInstance();
+	
 	final ObservableList<String> listItems = FXCollections.observableArrayList("Add Items here");
 	
 	
 	public View2Controller() {
+		if (data.getPostList().isEmpty()) {
+			dummyData();
+		}
 	}
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		lstPosts.setItems(listItems);
-		ArrayList<Category> post1Categories = new ArrayList<Category>();
-		post1Categories.add(new Category("", "Category1", true));
-		post1Categories.add(new Category("", "Category1", false));
-		Data.getInstance().addPostList(new Post("icon", "Titel", post1Categories, "content"));
-		Data.getInstance().addPostList(new Post("icon2", "Titel2", post1Categories, "content2"));
+		refreshlstPosts();
 	}
 
+	public void dummyData() {
+		// creating 3 categories
+		data.getCategories().add(new Category(null, "Kategorie 1", true));
+		data.getCategories().add(new Category(null, "Kategorie 2", true));
+		data.getCategories().add(new Category(null, "Kategorie 3", false));
+		
+		// creating ArrayList with Categories of Post 1
+		ArrayList<Category> post1Categories = new ArrayList<Category>();
+		post1Categories.add(data.getCategories().get(0));
+		post1Categories.add(data.getCategories().get(2));
+		
+		// creating Post1
+		data.addPostList(new Post("icon1", "Titel1", post1Categories, "content1"));
+		
+		// creating Post2
+		ArrayList<Category> post2Categories = new ArrayList<Category>();
+		post2Categories.add(data.getCategories().get(1));
+		Data.getInstance().addPostList(new Post("icon2", "Titel2", post2Categories, "content2"));
+		
+		// creating Post3
+		ArrayList<Category> post3Categories = new ArrayList<Category>();
+		post3Categories.add(data.getCategories().get(2));
+		Data.getInstance().addPostList(new Post("icon3", "Titel3", post3Categories, "content3"));
+	}
+	
 	public void refreshlstPosts() {
 		listItems.clear();
 		for (Post post : Data.getInstance().getPostList()) {
