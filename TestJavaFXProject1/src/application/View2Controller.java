@@ -32,13 +32,11 @@ public class View2Controller implements Initializable {
 	final ObservableList<String> listItems = FXCollections.observableArrayList("Add Items here");
 	
 	
-	public View2Controller() {
-		DummyData.dummyData();
-		refreshlstPosts();
-	}
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		lstPosts.setItems(listItems);
+		DummyData.dummyData();
+		refreshlstPosts();
 	}
 
 	public void refreshlstPosts() {

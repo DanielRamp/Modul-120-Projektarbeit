@@ -41,10 +41,6 @@ public class View3Controller implements Initializable {
 	
 	private Data data= Data.getInstance();
 	private Helper helper = Helper.getInstance();
-	
-	
-	public View3Controller() {
-	}
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		mnbCategories.getItems().clear();
