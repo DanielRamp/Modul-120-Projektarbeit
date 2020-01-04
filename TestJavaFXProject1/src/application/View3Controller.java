@@ -37,7 +37,7 @@ public class View3Controller implements Initializable {
 
 	@FXML public void btnPrevAction() {
 		Helper helper = Helper.getInstance();
-		helper.dialogStage.close();
+		helper.getStage().close();
 	}
 
 	@FXML public void btnSendPostAction() {

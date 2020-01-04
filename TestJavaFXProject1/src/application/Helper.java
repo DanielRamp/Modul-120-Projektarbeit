@@ -22,10 +22,9 @@ public class Helper {
 	private static final int STAGEMINHEIGHT = 400;
 	private static final int STAGEMINWIDTH = 600;
 	
-	// TODO: NOT not private for NOT testing
-	Stage stage, dialogStage; // Swing: JFrame
-	Scene scene, dialogScene; // Swing: content pane
-	Parent root, dialogRoot;
+	private Stage stage, dialogStage; // Swing: JFrame
+	private Scene scene, dialogScene; // Swing: content pane
+	private Parent root, dialogRoot;
 	
 	public static Helper getInstance () {
 	    if (Helper.instance == null) {
@@ -109,6 +108,21 @@ public class Helper {
 		dialogStage.initOwner(stage);
 		dialogStage.initModality(Modality.APPLICATION_MODAL);
 		dialogStage.showAndWait();
+	}
+
+
+	/**
+	 * @return the stage
+	 */
+	public Stage getStage() {
+		return stage;
+	}
+
+	/**
+	 * @param stage the stage to set
+	 */
+	public void setStage(Stage stage) {
+		this.stage = stage;
 	}
 
 }
