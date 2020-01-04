@@ -50,10 +50,7 @@ public class View1Controller implements Initializable {
 	protected void btnNextAction() {
 		Helper helper = Helper.getInstance();
 		
-		Stage stage = helper.changeView(btnNext, "View2.fxml");
-
-		stage.setMinHeight(400);
-		stage.setMinHeight(600);
+		helper.changeView(btnNext, "View2.fxml");
 		
 		
 		/*
