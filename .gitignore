@@ -85,3 +85,4 @@ local.properties
 .worksheet
 TestJavaFXProject1/src/application/changeView.java
 TestJavaFXProject1/src/application/PostListViewCell.java
+TestJavaFXProject1/src/application/ScreenController.java
