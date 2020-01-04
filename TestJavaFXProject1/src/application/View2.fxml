@@ -23,7 +23,7 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </BorderPane.margin>
          <left>
-            <Button id="btnPrev" fx:id="btnPrev" accessibleText="Zurück Button" mnemonicParsing="false" onAction="#btnPrevAction" styleClass="round-button" BorderPane.alignment="CENTER">
+            <Button id="btnPrev" fx:id="btnPrev" accessibleText="Zurück Button" cancelButton="true" mnemonicParsing="false" onAction="#btnPrevAction" styleClass="round-button" BorderPane.alignment="CENTER">
                <graphic>
                   <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -63,7 +63,7 @@
             </Button>
          </left>
          <right>
-            <Button id="btnNewPost" fx:id="btnNewPost" accessibleText="Post hinzufügen Button" mnemonicParsing="false" onAction="#btnNewPostAction" styleClass="round-button" BorderPane.alignment="CENTER">
+            <Button id="btnNewPost" fx:id="btnNewPost" accessibleText="Post hinzufügen Button" defaultButton="true" mnemonicParsing="false" onAction="#btnNewPostAction" styleClass="round-button" BorderPane.alignment="CENTER">
                <graphic>
                   <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
