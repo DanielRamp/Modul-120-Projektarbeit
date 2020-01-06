@@ -5,7 +5,6 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -25,6 +24,7 @@ public class Helper {
 	private Stage stage, dialogStage; // Swing: JFrame
 	private Scene scene, dialogScene; // Swing: content pane
 	private Parent root, dialogRoot;
+	private FXMLLoader loader, dialogLoader;
 	
 	public static Helper getInstance () {
 	    if (Helper.instance == null) {
@@ -33,89 +33,89 @@ public class Helper {
 	    return Helper.instance;
 	}
 	
-	
 	public void firstView(Stage stage, String view) {
-		
 		root = null;
+		
+		loader = new FXMLLoader(getClass().getResource(view));
 		try {
-			root = FXMLLoader.load(getClass().getResource(view));
+			root = loader.load();
 		} catch (IOException e) {
 			Outputter.err(e.getStackTrace().toString());
+		} finally {
+			scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			stage.setScene(scene);
+			// Title and Icon
+			stage.setTitle("News");
+			try {
+				Image icon = new Image(getClass().getResourceAsStream("img/newspaper.png"));
+				stage.getIcons().add(icon);
+			} catch (Exception e) {
+				Outputter.err(e.getStackTrace().toString());
+			}
+			
+			// minimal Dimensions
+			stage.setMinHeight(STAGEMINHEIGHT);
+			stage.setMinWidth(STAGEMINWIDTH);
 		}
+	}
+	
+	public void changeView(String view) {
 		
-		scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		stage.setScene(scene);
+		loader = new FXMLLoader(getClass().getResource(view));
 		
-		
-		// Title and Icon
-		stage.setTitle("News");
 		try {
-			Image icon = new Image(getClass().getResourceAsStream("img/newspaper.png"));
-			stage.getIcons().add(icon);
+			root = (Parent) loader.load();
+		} catch (IOException e) {
+			Outputter.err(e.getStackTrace().toString());
+		} finally {
+			scene.setRoot(root);
+		}
+	}
+	
+	public void dialogView(String view) {
+		
+		dialogLoader = new FXMLLoader(getClass().getResource(view));
+		
+		try {
+			dialogRoot = dialogLoader.load();
+		} catch (IOException e) {
+			Outputter.err(e.getStackTrace().toString());
+		} finally {
+			dialogScene = new Scene(dialogRoot);
+			
+			dialogStage = new Stage();
+			dialogStage.setScene(dialogScene);
+			
+			// Modality
+			dialogStage.initOwner(stage);
+			dialogStage.initModality(Modality.APPLICATION_MODAL);
+			dialogStage.showAndWait();
+		}
+	}
+	
+	public boolean closeApplication() {
+		try {
+			getStage().close();
+			return true;
 		} catch (Exception e) {
-			Outputter.err(e.getStackTrace().toString());
+			Outputter.out(e.getStackTrace().toString());
+			return false;
 		}
-		
-		// minimal Dimensions
-		stage.setMinHeight(STAGEMINHEIGHT);
-		stage.setMinHeight(STAGEMINWIDTH);
 	}
-	
-	public void changeView(Button btn, String view) {
-		root = null;
-		
-		try {
-			root = FXMLLoader.load(getClass().getResource(view));
-		} catch (IOException e) {
-			Outputter.err(e.getStackTrace().toString());
-		}
-		
-		scene.setRoot(root);
-	}
-	
-	public FXMLLoader changeViewLoader(Button btn, String view) {
-		FXMLLoader load;
-		
-		stage = (Stage) btn.getScene().getWindow();
-		
-		load = new FXMLLoader(getClass().getResource(view));
-		
-		try {
-			root = (Parent) load.load();
-		} catch (IOException e) {
-			Outputter.err(e.getStackTrace().toString());
-		}
-		
-		scene.setRoot(root);
-		
-		return load;
-	}
-	
-	public void dialogView(Button btn, String view) {
-		dialogStage = new Stage();
-		
-		dialogRoot = null;
-		try {
-			dialogRoot = FXMLLoader.load(getClass().getResource(view));
-		} catch (IOException e) {
-			Outputter.err(e.getStackTrace().toString());
-		}
-		
-		dialogScene = new Scene(dialogRoot);
-		dialogStage.setScene(dialogScene);
-		
-		dialogStage.initOwner(stage);
-		dialogStage.initModality(Modality.APPLICATION_MODAL);
-		dialogStage.showAndWait();
-	}
-
 
 	/**
 	 * @return the stage
 	 */
 	public Stage getStage() {
 		return stage;
+	}
+
+	/**
+	 * @param stage the stage to set
+	 */
+	public void setStage(Stage stage) {
+		this.stage = stage;
 	}
 
 	/**
@@ -126,10 +126,10 @@ public class Helper {
 	}
 
 	/**
-	 * @param stage the stage to set
+	 * @return the loader
 	 */
-	public void setStage(Stage stage) {
-		this.stage = stage;
+	public FXMLLoader getLoader() {
+		return loader;
 	}
-
+	
 }

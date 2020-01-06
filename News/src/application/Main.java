@@ -6,9 +6,11 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	
+	private Helper helper = Helper.getInstance();
+	
 	@Override
 	public void start(Stage stage) {
-		Helper helper = Helper.getInstance();
+		DummyData.dummyData();
 		
 		helper.setStage(stage);
 		

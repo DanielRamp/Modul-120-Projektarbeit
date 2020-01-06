@@ -12,6 +12,7 @@ public class Data {
 
 	private ArrayList<Category> categories = new ArrayList<Category>();
 	private ArrayList<Post> postList = new ArrayList<Post>();
+	private Boolean categoryChoosen = false;
 
 	public static Data getInstance() {
 		if (Data.instance == null) {
@@ -53,6 +54,20 @@ public class Data {
 	 */
 	public void addPostList(Post post) {
 		this.postList.add(post);
+	}
+
+	/**
+	 * @return true if categoryChoosen, else false
+	 */
+	public Boolean isCategoryChoosen() {
+		return categoryChoosen;
+	}
+
+	/**
+	 * @param categoryChoosen the categoryChoosen to set
+	 */
+	public void setCategoryChoosen(Boolean categoryChoosen) {
+		this.categoryChoosen = categoryChoosen;
 	}
 
 }

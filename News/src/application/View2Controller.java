@@ -1,14 +1,12 @@
 package application;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -65,10 +63,10 @@ public class View2Controller implements Initializable {
 	
 	
 	@FXML public void btnPrevAction() {
-		FXMLLoader load = helper.changeViewLoader(btnPrev, "View1.fxml");
+		helper.changeView("View1.fxml");
 		
 		// hide lblWelcome on View1 - to recycle View1
-		View1Controller view1Controller = load.getController();
+		View1Controller view1Controller = helper.getLoader().getController();
 		view1Controller.hideWelcome();
 	}
 	
@@ -90,7 +88,7 @@ public class View2Controller implements Initializable {
 	
 
 	@FXML public void btnNewPostAction() {
-		helper.dialogView(btnPrev, "View3.fxml");
+		helper.dialogView("View3.fxml");
 	}
 
 }

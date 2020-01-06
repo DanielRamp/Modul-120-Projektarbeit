@@ -13,7 +13,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.CheckBox;
-import javafx.event.ActionEvent;
 
 public class View1Controller implements Initializable {
 
@@ -34,11 +33,23 @@ public class View1Controller implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		chbCategory1.setSelected(true);
-		chbCategory2.setSelected(true);
-		chbCategory3.setSelected(true);
-		chbCategory4.setSelected(true);
-		chbCategory5.setSelected(true);
+		Outputter.out(""+data.getCategories().size());
+		if (!data.isCategoryChoosen()) {
+			chbCategory1.setSelected(true);
+			chbCategory2.setSelected(true);
+			chbCategory3.setSelected(true);
+			chbCategory4.setSelected(true);
+			chbCategory5.setSelected(true);
+		} else {
+			CheckBox[] checkBoxes = {chbCategory1, chbCategory2, chbCategory3, chbCategory4, chbCategory5};
+			for (int i = 0; i < data.getCategories().size(); i++) {
+				if (data.getCategories().get(i).isSelected()) {
+					checkBoxes[i].setSelected(true);
+				} else {
+					checkBoxes[i].setSelected(false);
+				}
+			}
+		}
 	}
 	
 	@FXML protected void btnNextAction() {
@@ -68,7 +79,8 @@ public class View1Controller implements Initializable {
 		} else {
 			data.getCategories().get(4).setSelected(false);
 		}
-		helper.changeView(btnNext, "View2.fxml");
+		data.setCategoryChoosen(true);
+		helper.changeView("View2.fxml");
 	}
 	
 	public void hideWelcome() {
@@ -80,23 +92,23 @@ public class View1Controller implements Initializable {
 	@FXML protected void keyPressed(KeyEvent ke) {
 		KeyCode kc = ke.getCode();
 		if (kc == KeyCode.ESCAPE) {
-			closeApplication(ke);
-			System.out.println("Escape Key pressed, closing Application!");
+			helper.closeApplication();
+			Outputter.out("Escape Key pressed, closing Application!");
 		} else if (kc == KeyCode.CONTROL) {
 			pressedCtrl = true;
-			System.out.println("pressedCtrl = true");
+			Outputter.out("pressedCtrl = true");
 		} else if (kc == KeyCode.W) {
 			if (pressedCtrl) {
-				System.out.println("Ctrl + W Keys pressed, closing Application!");
-				closeApplication(ke);
+				Outputter.out("Ctrl + W Keys pressed, closing Application!");
+				helper.closeApplication();
 			}
 		} else if (kc == KeyCode.Q) {
 			if (pressedCtrl) {
-				System.out.println("Ctrl + Q Keys pressed, closing Application!");
-				closeApplication(ke);
+				Outputter.out("Ctrl + Q Keys pressed, closing Application!");
+				helper.closeApplication();
 			}
 		} else {
-			System.out.println("Key " + kc + " pressed");
+			Outputter.out("Key " + kc + " pressed");
 		}
 	}
 	
@@ -104,21 +116,23 @@ public class View1Controller implements Initializable {
 		KeyCode kc = ke.getCode();
 		if (kc == KeyCode.CONTROL) {
 			pressedCtrl = false;
-			System.out.println("pressedCtrl = false");
+			Outputter.out("pressedCtrl = false");
 		} else {
-			System.out.println("Key " + kc + " released");
+			Outputter.out("Key " + kc + " released");
 		}
 	}
 	
+	/*
 	private boolean closeApplication(Object o) {
 		try {
 			//((Node)((KeyEvent) o).getSource()).getScene().getWindow().hide(); // Source: https://stackoverflow.com/a/21938672
 			helper.getStage().close();
 			return true;
 		} catch (Exception e) {
-			System.out.println(e);
+			Outputter.out(e.getStackTrace().toString());
 			return false;
 		}
 	}
+	*/
 	
 }

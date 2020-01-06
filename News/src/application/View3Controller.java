@@ -71,6 +71,8 @@ public class View3Controller implements Initializable {
 		data.getPostList().add(post);
 		
 		helper.getDialogStage().close();
+		View2Controller view2Controller = (View2Controller) helper.getLoader().getController();
+		view2Controller.refreshlstPosts();
 	}
 
 }
