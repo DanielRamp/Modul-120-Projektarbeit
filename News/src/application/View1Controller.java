@@ -122,17 +122,4 @@ public class View1Controller implements Initializable {
 		}
 	}
 	
-	/*
-	private boolean closeApplication(Object o) {
-		try {
-			//((Node)((KeyEvent) o).getSource()).getScene().getWindow().hide(); // Source: https://stackoverflow.com/a/21938672
-			helper.getStage().close();
-			return true;
-		} catch (Exception e) {
-			Outputter.out(e.getStackTrace().toString());
-			return false;
-		}
-	}
-	*/
-	
 }
